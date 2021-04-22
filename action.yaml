@@ -1,0 +1,15 @@
+name: 'Setup Postgres Container'
+description: 'Execute postgres command-line client commands'
+author: 'Literal'
+branding:
+  icon: 'database'
+  color: 'blue'
+inputs:
+  commands:
+    description: 'The script that should be executed'
+    required: true
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.commands }}
